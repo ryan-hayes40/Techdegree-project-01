@@ -9,7 +9,7 @@ body {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   color: #222;
-  background: #f7f5f0;
+  background: #eee;
 }
 
 /* Link Styles */
@@ -30,6 +30,7 @@ a:hover {
   padding: 10px;
   position: fixed;
   text-align: center;
+  z-index: 1000;
 }
 
 .nav {
@@ -39,6 +40,7 @@ a:hover {
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
+
 }
 
 .nav .name {
