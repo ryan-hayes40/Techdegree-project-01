@@ -1,38 +1,74 @@
-/* Global Layout Set-up */
+/**
+ * ----------------------------------------
+ * Global Styles
+ * ----------------------------------------
+ */
+
 * { 
   box-sizing: border-box;
+  margin:0;
+  padding:0;
+  border:0;
 }
-  
 body {
   margin: 0;
   padding: 0;
-  text-align: center;
   font-family: 'Roboto', sans-serif;
   color: #222;
   background: #eee;
 }
-
-/* Link Styles */
 a {
   text-decoration: none;
   color: #999;
 }
-
 a:hover {
   color: #6633ff;
 }
+h2 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+ul {
+  list-style: none;
+}
+.feature-image {
+  min-height: 140px;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.feature-text {
 
-/* Section Styles */
+}
+.intro2 {
+  background-position: top;
+}
+
+/**
+ * ----------------------------------------
+ * Header Styles
+ * ----------------------------------------
+ */
+
+header {
+  text-align: center;
+}
+
+/**
+* ----------------------------------------
+* Nav Styles
+* ----------------------------------------
+*/
+
 .main-nav {
   width: 100%;
   background: black;
   min-height: 30px;
   padding: 10px;
-  position: fixed;
+  position: sticky;
   text-align: center;
+  box-shadow: 0px 1px 6px black;
   z-index: 1000;
 }
-
 .nav {
   display: flex;
   justify-content: space-around;
@@ -40,120 +76,37 @@ a:hover {
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
-
 }
-
-.nav .name {
-    display: block;
-    margin-right: auto;
-    color: white;
-}
-
 .nav li {
-  padding: 5px 10px 10px 10px;
+  padding: 5px 10px 5px 10px;
 }
-
 .nav a {
   transition: all .5s;
 }
 .nav a:hover {
-  color: white
-}
-
-header {
-  text-align: center;
-  background: url('images/header_background.jpg') no-repeat top center ;
-  background-size: cover;
-  overflow: hidden;
-  padding-top: 60px;
-}
-
-header {
-  line-height: 1.5;
-}
-
-.profile-image {
-  position: absolute;
-}
-
-.profile-image-hover {
-  position: relative;
-  opacity: 0;
-}
-
-.profile-image, .profile-image-hover {
-  margin-top: 50px;
-  width: 175px;
-  height: 175px;
-  border-radius: 50%;
-  border: 1px solid #222;
-  transition: all .5s;
-}
-
-.profile-image-hover:hover {
-  transform: scale(1.4) rotate(720deg);
-  opacity: 1;
-  transition: all .5s;
-}
-
-.tag {
-  background-color: #efefef;
-  color: black;
-  padding: 10px;
-  border-radius: 5px;
-  display: table;
-  margin: 10px auto;
-}
-
-.location {
-  background-color: #222;
-  color: #fff;
-}
-
-.card {
-  margin: 30px;
-  padding: 20px 40px 40px;
-  max-width: 500px;
-  text-align: left;
-  background: #fff;
-  border-bottom: 4px solid #ccc;
-  border-radius: 6px;
-  transition: all .5s;
-}
-
-.card:hover {
-  border-color: #ff99ff;
-}
-
-ul.skills {
-  padding: 0;
-  text-align: center;
-}
-
-.skills li {
-  border-radius: 6px;
-  display: inline-block;
-  background: #ff9904;
   color: white;
-  padding: 5px 10px;
-  margin: 2px;
+}
+.name {
+  font-size: 18px;
+}
+.nav .name {
+  display: block;
+  margin-right: auto;
+  color: white;
 }
 
-.skills li:nth-child(odd) {
-  background: #0399ff;
-}
+/**
+* ----------------------------------------
+* Footer Styles
+* ----------------------------------------
+*/
 
 footer {
   width: 100%;
   min-height: 30px;
+  text-align: center;
   padding: 20px 0 40px 20px;
 }
-
-footer .copyright {
-  top: -8px;
-  font-size: .75em;
-}
-
 footer ul {
   list-style-type: none;
   margin: 0;
@@ -162,6 +115,10 @@ footer ul {
 
 footer ul li {
   display: inline-block;
+}
+footer .copyright {
+  top: -8px;
+  font-size: .75em;
 }
 
 a.social {
@@ -186,13 +143,171 @@ a.github {
 a.social:hover {
   opacity: 1;
 }
-.clearfix {
+
+/**
+ * ----------------------------------------
+ * Main Styles- Home Page
+ * ----------------------------------------
+ */
+
+.intro {
+  text-align: center;
+  background: url('images/header_background.jpg') no-repeat top center ;
+  background-size: cover;
+  overflow: hidden;
+  padding-top: 60px;
+  border-bottom: 2px solid black;
+  box-shadow: 0px 1px 10px black;
+  line-height: 1.5;
+}
+.profile-image {
+  position: absolute;
+}
+.profile-image-hover {
+  position: relative;
+  opacity: 0;
+}
+.profile-image, .profile-image-hover {
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  border: 1px solid #222;
+  transition: all .5s;
+  z-index: 1000;
+}
+.profile-image-hover:hover {
+  transform: scale(1.3) rotate(720deg);
+  border: 2px solid #222;
+  box-shadow: 1px 1px 6px black;
+  opacity: 1;
+  transition: all .7s;
+}
+.text-focus-in {
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+.tag {
+  background-color: #efefef;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  display: table;
+  margin: 10px auto;
+  rotate: 3deg;
+}
+.location {
+  background-color: #222;
+  color: #fff;
+  rotate: -3deg;
+}
+.card {
+  margin: 30px;
+  padding: 20px 40px 40px;
+  max-width: 500px;
+  text-align: left;
+  background: #fff;
+  border-bottom: 4px solid #ccc;
+  border-radius: 6px;
+  transition: all .5s;
+}
+.card:hover {
+  border-color: #ff99ff;
+}
+
+/**
+ * ----------------------------------------
+ * Main Styles- Resume Page
+ * ----------------------------------------
+ */
+
+.resume-wrapper {
+  border: 1px solid black;
+  margin: auto;
+}
+.resume-intro {
+  text-align: center;
+  background-color: #00007b;
+  color: #ffffff;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+.resume-content {
+  text-align: left;
+  padding: 25px 20px 20px 20px;
+  background-color: #ffffff;
+  min-height: 400px;
+  width: 70%;
+  float: right;
+}
+.resume-experience {
+  margin-bottom: 25px;
+}
+.resume-sidebar {
+  width: 30%;
+  float: left;
+  text-align: right;
+  padding: 25px 20px 20px 5px;
+  background-color: #f7f7f7;
+  min-height: 400px;
+}
+ul.resume-skills {
+  padding: 0;
+  text-align: right;
+}
+.resume-skills li {
+  border-radius: 6px;
+  display: inline-block;
+  background: #ff9904;
+  color: white;
+  padding: 5px 10px;
+  margin: 2px;
+}
+.resume-skills li:nth-child(odd) {
+  background: #0399ff;
+}
+.resume-clearfix {
   clear: both;
 }
 
-/* Styles for larger screens */
+/**
+ * ----------------------------------------
+ * Main Styles- Contact Page
+ * ----------------------------------------
+ */
+
+
+/**
+ * ----------------------------------------
+ * Mobile Styles- Large Screens
+ * ----------------------------------------
+ */
+
 @media screen and (min-width: 720px) {
-  
   .flex {
       display: -ms-flexbox;      /* TWEENER - IE 10 */
       display: flex; 
@@ -201,30 +316,34 @@ a.social:hover {
       justify-content: space-around;
       margin: 0 auto;
   }
-
-  header {
-    min-height: 470px;
+  .intro {
+    min-height: 400px;
   }
-
+  .intro2 {
+    min-height: 150px;
+    background-position: center;
+    background-size: revert;
+    padding-top: 10px;
+  }
   .nav {
     max-width: 1200px;
     padding: 0 30px;
   }
-
-
-  main {
-    padding-top: 20px;
+  .resume-wrapper {
+    max-width: 850px;
+    margin-top: 35px;
   }
-
   main p {
     line-height: 1.6em;
   }
-
   footer {
     font-size: 1.3em;
-    max-width: 1200px;
     margin: 40px auto;
   }
-
 }
+
+
+
+
+
 
